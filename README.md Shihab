@@ -1,0 +1,41 @@
+# SentinelC
+
+A lightweight File Integrity Monitoring and Tamper Detection prototype written in C.
+
+## About the Project
+
+SentinelC is an academic C programming project focused on file integrity and tamper detection concepts.
+
+The project uses a file record containing:
+
+- Filename
+- File size
+- Hash value
+
+It uses the FNV-1a 32-bit hashing algorithm to generate a hash value for demonstration.
+
+## What I Learned
+
+Through this project, I practiced:
+
+- C structures
+- Functions
+- Arrays
+- User input and output
+- String handling
+- Hashing concepts
+- File integrity concepts
+- Basic problem decomposition
+
+## Current Scope
+
+This repository contains an early prototype developed as part of my structured programming learning.
+
+It is intended for educational purposes and does not claim to be a production-level file monitoring system.
+
+## Technologies
+
+- C
+- FNV-1a Hashing
+- Git
+- GitHub
