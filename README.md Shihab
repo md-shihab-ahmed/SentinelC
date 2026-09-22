@@ -1,41 +1,87 @@
 # SentinelC
 
-A lightweight File Integrity Monitoring and Tamper Detection prototype written in C.
+## Lightweight File Integrity Monitoring and Tamper Detection System in C
+
+SentinelC is a lightweight file integrity monitoring and tamper detection prototype developed in C. It checks files against a previously created baseline and detects changes in monitored files.
 
 ## About the Project
 
-SentinelC is an academic C programming project focused on file integrity and tamper detection concepts.
+The project was developed as part of the Structured Programming Language Sessional course in the Department of Cyber Security Engineering.
 
-The project uses a file record containing:
+SentinelC creates a baseline of files in a selected folder. The baseline stores basic file information including the file name, file size, and FNV-1a 32-bit hash.
 
-- Filename
-- File size
-- Hash value
+During an audit, SentinelC compares the current file information with the saved baseline and reports detected changes.
 
-It uses the FNV-1a 32-bit hashing algorithm to generate a hash value for demonstration.
+## Main Features
 
-## What I Learned
+- Create a file baseline
+- Calculate FNV-1a 32-bit hash
+- Compare current files with the baseline
+- Detect modified files
+- Detect new files
+- Detect deleted files
+- Detect unchanged files
+- Maintain an audit log
+- Reset the existing baseline
 
-Through this project, I practiced:
+## How It Works
 
-- C structures
+The basic workflow is:
+
+Baseline → File Size + Hash → Audit → Compare → Result → Audit Log
+
+The system can report four main results:
+
+- MATCH
+- MODIFIED
+- NEW FILE
+- DELETED
+
+## Technologies Used
+
+- C Programming Language
+- File Handling
+- Structures
 - Functions
-- Arrays
-- User input and output
-- String handling
-- Hashing concepts
-- File integrity concepts
-- Basic problem decomposition
+- FNV-1a 32-bit Hashing
+- Windows API for directory and file enumeration
 
-## Current Scope
+## Project Structure
 
-This repository contains an early prototype developed as part of my structured programming learning.
+```text
+SentinelC/
+├── sentinel.c
+└── README.md
 
-It is intended for educational purposes and does not claim to be a production-level file monitoring system.
 
-## Technologies
+How to Run
+Compile sentinel.c using a C compiler on Windows.
+Run the generated executable.
+Select Create Baseline.
+Enter the folder path that you want to monitor.
+Select Run Audit to compare the current files with the saved baseline.
+Select View Audit Log to see recorded audit events.
+Test Results
 
-- C
-- FNV-1a Hashing
-- Git
-- GitHub
+The project was tested using a sample folder containing text files.
+
+The following cases were successfully tested:
+
+MATCH: File remained unchanged.
+MODIFIED: A change in an existing file was detected.
+NEW FILE: A newly created file was detected.
+DELETED: A deleted file was detected.
+AUDIT LOG: Detected events were recorded in the audit log.
+Limitations
+The current version performs user-triggered audits rather than continuous real-time monitoring.
+FNV-1a is used as a lightweight change-detection hash and is not a cryptographic hash such as SHA-256.
+The project is a prototype for learning and academic purposes.
+Future Improvements
+
+Possible future improvements include:
+
+SHA-256 based file hashing
+Real-time file monitoring
+Automatic notifications
+Graphical User Interface (GUI)
+Backup and restoration features
