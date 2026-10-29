@@ -1,0 +1,14 @@
+# Binaries and build artifacts
+*.exe
+*.o
+*.obj
+
+# SentinelC runtime files
+baseline.db
+config.txt
+audit_log.txt
+
+# Editor and OS metadata
+.vscode/
+.DS_Store
+Thumbs.db
